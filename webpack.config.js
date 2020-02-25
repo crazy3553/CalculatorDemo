@@ -2,7 +2,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const path = require("path");
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/index.js',
   mode: "development",
   resolve: {
     extensions: [".js", ".jsx", ".css", ".png"]

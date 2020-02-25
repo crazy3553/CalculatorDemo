@@ -2,10 +2,10 @@
   "name": "calculator",
   "version": "1.0.0",
   "repository": {
-    "name":"Nitesh Kumar",
+    "name": "Nitesh Kumar",
     "type": "git",
     "url": "https://github.com/crazy3553/Calculator.git",
-    "email":"nitesh174kumar@gmail.com"
+    "email": "nitesh174kumar@gmail.com"
   },
   "scripts": {
     "start": "webpack-dev-server --open",
@@ -25,6 +25,7 @@
     "react": "^16.12.0",
     "react-dom": ">=16.8.0",
     "react-redux": "^7.2.0",
+    "react-textfit": "^1.1.0",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
@@ -35,7 +36,7 @@
     "@babel/runtime": "^7.7.2",
     "autoprefixer": "^9.7.3",
     "babel-loader": "^7.1.5",
-    "file-loader": "^4.2.0",    
+    "file-loader": "^4.2.0",
     "postcss-loader": "^3.0.0",
     "css-loader": "^3.2.0",
     "style-loader": "^1.0.0",
