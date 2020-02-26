@@ -2,7 +2,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const path = require("path");
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   mode: "development",
   resolve: {
     extensions: [".js", ".jsx", ".css", ".png"]
@@ -17,7 +17,7 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
   },
-  module: {    
+  module: {
     rules: [
       {
         test: /\.jsx?$/,
@@ -56,5 +56,5 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     port: 9090
-  },  
+  }
 };

@@ -1,3 +1,3 @@
-# Calculator
-***Build an Calculator App with React and CSS
-***Responsive for all browsers 
+# Building an Calculator App 
+# Build an Calculator App with React and CSS and Redux
+# Responsive for all browsers 
