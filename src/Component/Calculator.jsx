@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { History } from "./History";
 import { Result } from "./Result";
 import { CalculateAction } from "../_actions";
+import { Performcalculation } from "../Assets/util/PerformCalculation";
 
 let nextNumber = [];
 export class Calculator extends Component {
@@ -14,40 +15,13 @@ export class Calculator extends Component {
     this.CommonCalculat = this.CommonCalculat.bind(this);
   }
   componentWillMount() {}
-  CommonCalculat = e => {
+  CommonCalculat(e) {
     // CalculateAction.PerformCalculation(e.target.value);
-    if (
-      e.target.value != "c" &&
-      e.target.value != "+/-" &&
-      e.target.value != "%" &&
-      e.target.value != "+" &&
-      e.target.value != "-" &&
-      e.target.value != "÷" &&
-      e.target.value != "x" &&
-      e.target.value != "="
-    ) {
-      nextNumber.push(e.target.value);
-    } else {
-      if (
-        nextNumber.length > 0 ||
-        e.target.value != "+/-" ||
-        e.target.value != "c"
-      ) {
-        if (e.target.value != "c") {
-          this.setState({
-            Operator: e.target.value
-          });
-          nextNumber.push(e.target.value);
-        }
-        else{
-          nextNumber.length=0;
-        }
-      }
-    }
+    var resp = Performcalculation.calculation(e.target.value);
     this.setState({
-      valuesForCalculation: [...nextNumber]
+      valuesForCalculation: [...resp]
     });
-  };
+  }
   render() {
     return (
       <div>
