@@ -32,7 +32,7 @@ export class Calculator extends Component {
           <div className="ResultPanel">
             <Result valueToBeCalculated={this.state.valuesForCalculation} />
           </div>
-          <span className="gridDisplay">
+          <div className="gridDisplay">
             <button onClick={e => this.CommonCalculat(e)} value="c">
               C
             </button>
@@ -111,7 +111,7 @@ export class Calculator extends Component {
             >
               =
             </button>
-          </span>
+          </div>
         </div>
       </div>
     );
