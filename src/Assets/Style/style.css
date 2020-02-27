@@ -66,3 +66,39 @@ button {
   color: #477f92d3;
   font-size: 30px;
 }
+/*********responsive style***********/
+@media only screen and  (max-width: 1024px) {
+  .container{
+    width: auto;
+    height: auto;
+    left: 2%;
+    right: 2%;
+    margin: auto;
+    overflow-y: auto;
+    top: 2%;
+    bottom: 2%;
+  }
+  .gridDisplay{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+/*------------------------------LandScape Mode CSS------------------------------*/
+@media only screen and (max-device-width:1024px  ) and (orientation: landscape){
+  .container{    width: 70%;  }
+  .HistoryPanel{ margin-top: 2%;}
+  .ResultPanel{ margin-bottom: 1%;}
+  .gridDisplay{
+    padding-left: 10%;
+    padding-right: 10%;
+    grid-template-rows: 35px 35px 35px 35px 35px;
+    grid-template-columns: 80px 80px 80px 80px;
+    /* margin-left: 35px;
+    margin-right: 35px; */
+  }
+  button , button.equals {
+    padding: 0;
+  }
+}
