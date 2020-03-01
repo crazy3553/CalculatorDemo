@@ -2,24 +2,31 @@ import React, { Component } from "react";
 import { History } from "./History";
 import { Result } from "./Result";
 import { CalculateAction } from "../_actions";
-import { Performcalculation } from "../Assets/util/PerformCalculation";
+import { PerformCalculat } from "../Assets/util/PerformCalculation";
+import { connect } from "react-redux";
+import { store } from "../_helpers";
 
 let nextNumber = [];
-export class Calculator extends Component {
+let displayHistory = "";
+class Calculator extends Component {
   constructor() {
     super();
     this.state = {
-      valuesForCalculation: [],
-      Operator: ""
+      valuesForCalculation: []
     };
     this.CommonCalculat = this.CommonCalculat.bind(this);
   }
-  componentWillMount() {}
+  componentWillUpdate() {
+    if (store.getState().calculateOperations.items != undefined) {
+      displayHistory = store.getState().calculateOperations.items;
+    }
+  }
   CommonCalculat(e) {
     // CalculateAction.PerformCalculation(e.target.value);
-    var resp = Performcalculation.calculation(e.target.value);
+    var resp = PerformCalculat.Calculation(e.target.value);
+    if (e.target.value == "c") displayHistory = "";
     this.setState({
-      valuesForCalculation: [...resp]
+      valuesForCalculation: resp
     });
   }
   render() {
@@ -27,7 +34,7 @@ export class Calculator extends Component {
       <div>
         <div className="container">
           <div className="HistoryPanel">
-            <History />
+            {displayHistory != "" && <History histVal={displayHistory} />}
           </div>
           <div className="ResultPanel">
             <Result valueToBeCalculated={this.state.valuesForCalculation} />
@@ -117,3 +124,13 @@ export class Calculator extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { showHistoryData } = state;
+  return {
+    showHistoryData
+  };
+}
+
+const connectHistory = connect(mapStateToProps)(Calculator);
+export { connectHistory as Calculator };

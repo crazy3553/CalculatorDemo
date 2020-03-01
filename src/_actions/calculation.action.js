@@ -1,18 +1,13 @@
-import { calcConstants } from "../_constants";
+import {calcConstants} from '../../src/_constants/operation.constants.js'
 export const CalculateAction = {
-  PerformCalculation
+  ShowHistory
 };
 
-function PerformCalculation(data) {
+function ShowHistory(showHistoryData) {
   return dispatch => {
-    var calculateData = data;
-    dispatch(request());
-    dispatch(success(calculateData));
+    dispatch(success(showHistoryData));
   };
-  function request() {
-    return { type: calcConstants.OPERATION_REQUEST };
-  }
-  function success(calculateData) {
-    return { type: calcConstants.OPERATION_REQUEST_SUCCESS, calculateData };
+  function success(showHistoryData) {
+    return { type: calcConstants.OPERATION_REQUEST_SUCCESS, showHistoryData };
   }
 }

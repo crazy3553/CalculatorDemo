@@ -1,4 +1,4 @@
-var calcConstants = require("../_constants/operation.constants");
+import {calcConstants} from '../../src/_constants/operation.constants.js'
 export function calculateOperations(state = {}, action) {
   switch (action.type) {
     case calcConstants.OPERATION_REQUEST:
@@ -7,7 +7,7 @@ export function calculateOperations(state = {}, action) {
       };
     case calcConstants.OPERATION_REQUEST_SUCCESS:
       return {
-        items: { ...action.calculateData }
+        items: action.showHistoryData
       };
     case calcConstants.OPERATION_REQUEST_FAILURE:
       return {
