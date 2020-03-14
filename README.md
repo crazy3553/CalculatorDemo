@@ -1,3 +1,2 @@
-# Building an Calculator App 
-# Build an Calculator App with React and CSS and Redux
-# Responsive for all browsers 
+# An Calculator App 
+# This is one sample project i did as a Task for Interview conducted by a Company.
