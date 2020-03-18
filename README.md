@@ -1,2 +1,7 @@
-# An Calculator App 
-# This is one sample project i did as a Task for Interview conducted by a Company.
+# Building an calculator App.
+# Responsive to all the Browser.
+# User React,Redux-Thunk
+
+# Project Configuration
+ * npm start
+ * npm build
